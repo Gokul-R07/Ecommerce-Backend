@@ -32,9 +32,8 @@ router.post("/stripe-payment", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
     mode: "payment",
-    success_url:
-      "https://shopify-site.vercel.app/success=true",
-    cancel_url: "https://shopify-site.vercel.app/cancel",
+    success_url: "https://shopquick.vercel.app/success=true",
+    cancel_url: "https://shopquick.vercel.app/cancel",
   });
   res.send(
     JSON.stringify({
